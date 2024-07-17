@@ -17,6 +17,7 @@ const signup = async (req, res) => {
         if (user) return res.status(400).json({ msg: 'User already exists' });
 
         const verificationToken = crypto.randomBytes(20).toString('hex');
+        console.log(verificationToken)
 
         user = new User({ name, email, password, verificationToken, role });
 
@@ -26,12 +27,17 @@ const signup = async (req, res) => {
         await user.save();
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            service: "Gmail",
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.EMAIL,
                 pass: process.env.PASSWORD
             }
         });
+
+        // console.log(transporter)
 
         const mailOptions = {
             from: process.env.EMAIL,
@@ -138,6 +144,7 @@ const resetPassword = async (req, res) => {
             resetPasswordToken: req.params.token,
             resetPasswordExpires: { $gt: Date.now() }
         });
+        console.log(user)
         if (!user) return res.status(400).json({ msg: 'Invalid or expired token' });
 
         const salt = await bcrypt.genSalt(10);
