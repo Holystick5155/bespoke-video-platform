@@ -1,6 +1,5 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const config = require('config');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const User = require('../models/userModel');
@@ -82,7 +81,7 @@ const login = async (req, res) => {
         if (!user.isVerified) return res.status(400).json({ msg: 'Please verify your email first' });
 
         const payload = { user: { id: user.id, role: user.role } };
-        const token = jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 360000 });
+        const token = jwt.sign(payload, process.env.JWTKEY, { expiresIn: 360000 });
 
         res.json({ token });
     } catch (err) {
