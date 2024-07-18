@@ -3,8 +3,9 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/AuthController.js');
 const auth = require('../middleware/authMiddleware.js');
+const validateEmail = require('../middleware/validateEmail.js');
 
-router.post('/signup', authController.signup);
+router.post('/signup', validateEmail, authController.signup);
 router.get('/verify/:token', authController.verify);
 router.post('/login', authController.login);
 router.post('/forgot-password', authController.forgotPassword);

@@ -5,7 +5,6 @@ const crypto = require('crypto');
 const User = require('../models/userModel');
 const dotenv = require("dotenv");
 
-
 dotenv.config();
 
 // Signup Controller
@@ -143,7 +142,7 @@ const resetPassword = async (req, res) => {
             resetPasswordToken: req.params.token,
             resetPasswordExpires: { $gt: Date.now() }
         });
-   
+
         if (!user) return res.status(400).json({ msg: 'Invalid or expired token' });
 
         const salt = await bcrypt.genSalt(10);
