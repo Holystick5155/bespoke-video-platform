@@ -5,19 +5,47 @@ This repository contains the backend implementation for a Video Platform applica
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Project Setup](#project-setup)
-3. [Features](#features)
-4. [Endpoints](#endpoints)
-5. [Project Structure](#project-structure)
-6. [ER Diagram](#er-diagram)
-7. [Installation](#installation)
-8. [Usage](#usage)
-9. [Contributing](#contributing)
-10. [License](#license)
+2. [Project Overview](#project-overview)
+3. [Project Setup](#project-setup)
+4. [Features](#features)
+5. [Endpoints](#endpoints)
+6. [Project Structure](#project-structure)
+7. [ER Diagram](#er-diagram)
+8. [Installation](#installation)
+9. [Usage](#usage)
+10. [Contributing](#contributing)
+11. [License](#license)
 
 ## Introduction
 
 This backend repository serves as the foundation for a Video Platform application. It includes features such as user authentication, admin video uploads, password reset functionalities, and more.
+
+## Project Overview
+
+### Project Title
+Video Platform
+
+### Project Objective
+Paul Leonard, a video creator, needs a bespoke platform where he can upload videos for his customers under his brand. He is dissatisfied with existing video hosting platforms due to branding issues.
+
+### Customer Requirements
+
+#### User Features
+- Signup and login with email and password, including account verification.
+- Password reset feature for recovering lost passwords.
+- Navigate through video pages.
+- Share links to videos across different pages.
+
+#### Admin Features
+- Upload videos with a title and description.
+
+#### Video Page Features
+- Display a single video.
+- Include next and previous buttons to load new pages with different videos.
+- Hide previous or next buttons if there are no more videos to navigate.
+- Common video control buttons for user interaction.
+- Prominent display of the business logo at the top.
+- Share button for users to share links to the video page.
 
 ## Project Setup
 
@@ -119,14 +147,14 @@ Include your ER diagram here, illustrating the database structure of your applic
 To run this project locally, clone the repository and install dependencies using npm:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Holystick5155/bespoke-video-platform.git
 cd <project-folder>
 npm install
 ```
 
 ## Usage
 
-Before running the application, make sure to set up your MongoDB connection and configure environment variables (see `.env.example`).
+Before running the application, make sure to set up your MongoDB connection and configure environment variables (see `.env`).
 
 ```bash
 # Start the server
