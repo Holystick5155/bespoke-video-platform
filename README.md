@@ -130,8 +130,8 @@ project-root
 │   ├── authMiddleware.js        # Authentication middleware
 │   └── adminMiddleware.js       # Admin role verification middleware
 │   └── validateEmail.js       # Email validation middleware
-├── ER_diagram.png     # Entity-Relationship diagram illustrating database structure
-├── .env       # Environment variables configuration file (e.g., MONGODB_URL, JWTKEY, etc )
+├── ER-diagram.png     # Entity-Relationship diagram illustrating database structure
+├── .env       # Environment variables configuration file (e.g., MONGODB_CONNECTION, JWTKEY, etc )
 ├── .gitignore         # Git ignore file
 ├── package.json       # Node.js dependencies and scripts
 └── README.md          # Project README file
@@ -147,11 +147,24 @@ Include your ER diagram here, illustrating the database structure of your applic
 
 To run this project locally, clone the repository and install dependencies using npm:
 
+### 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Holystick5155/bespoke-video-platform.git
+```
+
+### 2. Project directory
+```bash
 cd <project-folder>
+```
+
+### 3. Install dependencies:
+```bash
 npm install
 ```
+
+### 4. Set up environmental variables:
+- Create a `.env` file in the root directory and configure the necessary variables (e.g., `MONGODB_CONNECTION`, `JWTKEY`, `EMAIL`, `PASSWORD`, `LOCALPORT`). In this project, a `.env` file has already been created for testing.
 
 ## Usage
 
@@ -162,7 +175,9 @@ Before running the application, make sure to set up your MongoDB connection and 
 npm start
 ```
 
-The server will run on `http://localhost:5000` by default.
+- Access the API at `http://localhost:5080/api`
+- Use tools like **Postman** or **Thunder Client** to test the endpoints.
+- For email verification and password reset purposes, kindly use a valid email address in order to receive verification and reset password tokens.
 
 ## Contributing
 
@@ -170,4 +185,4 @@ Contributions are welcome! Fork the repository and submit a pull request for any
 
 ## License
 
-This project is licensed under the [ISC License](LICENSE).
+This project is licensed under the [ISC License](https://opensource.org/licenses/ISC).
