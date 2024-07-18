@@ -38,6 +38,7 @@ Paul Leonard, a video creator, needs a bespoke platform where he can upload vide
 
 #### Admin Features
 - Upload videos with a title and description.
+- Edit and delete videos.
 
 #### Video Page Features
 - Display a single video.
@@ -140,7 +141,7 @@ project-root
 
 Include your ER diagram here, illustrating the database structure of your application.
 
-![ER Diagram](ER_diagram.png)
+![ER Diagram](ER-diagram.png)
 
 ## Installation
 
