@@ -9,6 +9,7 @@ const server = http.createServer(app);
 
 const AuthRoute = require('./routes/AuthRoute.js');
 const VideoRoute = require('./routes/VideoRoute.js');
+const UserRoute = require('./routes/UserRoute.js');
 
 app.use(cors())
 
@@ -36,6 +37,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.use('/api/auth', AuthRoute);
-app.use('/api/video', VideoRoute);
+app.use('/api/videos', VideoRoute);
+app.use('/api/users', UserRoute);
 
 module.exports = app;
